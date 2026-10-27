@@ -1,0 +1,96 @@
+:root {
+  --cream: #fff9f2;
+  --ink: #4b4458;
+  --muted: #5e566b;
+  --line: #eadfe9;
+  --white: #ffffff;
+  /* palet macaron (warna solid, tanpa gradasi) */
+  --pink: #f9c9d9;
+  --mint: #c9ebda;
+  --lavender: #dccff3;
+  --peach: #ffdcc2;
+  --lemon: #fff3b8;
+  --sky: #cbe4f7;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  background: var(--cream);
+  color: var(--ink);
+  font-family: ui-rounded, "Nunito", "Segoe UI", system-ui, -apple-system, sans-serif;
+  line-height: 1.55;
+}
+a { color: inherit; text-decoration: none; }
+img { max-width: 100%; display: block; }
+h1, h2, h3 { line-height: 1.25; }
+:focus-visible { outline: 3px solid var(--ink); outline-offset: 2px; }
+
+.wrap { max-width: 1100px; margin: 0 auto; padding: 0 16px; }
+
+/* header */
+.top { background: var(--white); border-bottom: 3px solid var(--lavender); position: sticky; top: 0; z-index: 10; }
+.bar { display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap; padding-top: 10px; padding-bottom: 10px; }
+.logo { font-size: 20px; font-weight: 800; }
+nav { display: flex; gap: 6px; flex-wrap: wrap; }
+nav a { padding: 6px 14px; border-radius: 999px; font-weight: 600; font-size: 14px; }
+nav a:hover { background: var(--lemon); }
+
+/* hero & pencarian */
+.hero { background: var(--pink); border-radius: 28px; padding: 28px 20px; margin: 20px 0 22px; }
+.hero.small { padding: 16px; }
+.hero h1 { margin: 0 0 6px; font-size: clamp(24px, 5vw, 38px); }
+.hero p { margin: 0 0 16px; color: var(--muted); }
+.search { display: flex; gap: 8px; }
+.search input {
+  flex: 1; min-width: 0; padding: 12px 18px; border-radius: 999px;
+  border: 2px solid var(--white); background: var(--white); font: inherit; color: inherit;
+}
+.btn {
+  display: inline-block; border: 0; cursor: pointer; font: inherit; font-weight: 700;
+  background: var(--lavender); color: var(--ink); padding: 11px 20px; border-radius: 999px;
+  box-shadow: 0 3px 0 var(--line);
+}
+.btn:hover { background: var(--mint); }
+
+/* chip */
+.chips { display: flex; flex-wrap: wrap; gap: 8px; }
+.chips.scroll { flex-wrap: nowrap; overflow-x: auto; padding-bottom: 8px; scrollbar-width: thin; }
+.chip {
+  flex: 0 0 auto; background: var(--white); border: 2px solid var(--line);
+  padding: 5px 14px; border-radius: 999px; font-size: 13px; font-weight: 600; white-space: nowrap;
+}
+.chip:hover { background: var(--lemon); }
+.chip.on { background: var(--pink); border-color: var(--pink); }
+
+/* judul bagian */
+.sec-title { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; margin: 28px 0 14px; }
+.sec-title h1, .sec-title h2 { margin: 0; font-size: 22px; }
+.more { font-size: 13px; color: var(--muted); font-weight: 600; }
+a.more:hover { text-decoration: underline; }
+
+/* kartu anime */
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap: 14px; }
+@media (min-width: 640px) { .grid { grid-template-columns: repeat(auto-fill, minmax(170px, 1fr)); gap: 18px; } }
+.card { display: flex; flex-direction: column; border-radius: 20px; overflow: hidden; box-shadow: 0 4px 0 var(--line); transition: transform 0.15s; }
+.card:hover { transform: translateY(-3px); }
+.c0 { background: var(--pink); }
+.c1 { background: var(--mint); }
+.c2 { background: var(--lavender); }
+.c3 { background: var(--peach); }
+.c4 { background: var(--lemon); }
+.c5 { background: var(--sky); }
+.poster { position: relative; aspect-ratio: 2 / 3; background: rgba(255, 255, 255, 0.55); }
+.poster img { width: 100%; height: 100%; object-fit: cover; }
+.badge {
+  position: absolute; top: 8px; right: 8px; background: var(--white);
+  font-size: 12px; font-weight: 700; padding: 2px 9px; border-radius: 999px;
+}
+.badge.time { right: auto; left: 8px; background: var(--lemon); }
+.card-body { padding: 10px 12px 12px; }
+.card h3 {
+  margin: 0; font-size: 14px;
+  display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;
+}
+.card p { margin: 4px 0 0; font-size: 12px; color: var(--muted); font-weight: 600; }
